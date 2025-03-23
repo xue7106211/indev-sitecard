@@ -4,6 +4,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { HelpCircle, ArrowRight } from "lucide-react";
 import NumberFlow from "@number-flow/react";
+import Image from "next/image";
 
 type Props = {
   name: string;
@@ -148,10 +149,12 @@ export function SiteSelector() {
                   onClick={() => toggleSite(site)}
                 >
                   <div className="flex flex-col items-center space-y-2">
-                    <img
+                    <Image
                       src={site.logo}
                       alt={`${site.name} logo`}
-                      className="w-12 h-12 object-contain"
+                      width={48}
+                      height={48}
+                      className="object-contain"
                     />
                     <span className="text-sm font-medium text-gray-900">
                       {site.name}
